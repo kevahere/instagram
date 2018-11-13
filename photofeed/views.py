@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 @login_required(login_url='/accounts/login/')
 def index(request):
     pics = Image.get_all()
-    return render(request, 'timeline.html', {'pics': pics})
+    return render(request, 'index.html', {'pics': pics})
 
 
 @login_required(login_url='/accounts/login/')
