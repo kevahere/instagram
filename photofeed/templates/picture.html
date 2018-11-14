@@ -1,0 +1,28 @@
+{% extends 'base.html'%
+{% load bootstrap4 %}
+{% block content %}
+<div class="container" id = "bod">
+    <div class="row">
+        {% if pic %}
+        <div class="card col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            {{pic.user.username}}
+            <img src="{{pic.image.url}}" alt="Image" class="card-img-top">
+                  {{pic.post_date|timesince}} ago
+            <form action="{% url 'picture' pic.id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form comment_form %}
+        </form>
+        </div>
+        {% else %}
+        <div class="row">
+            <h2 class="text-center">There are no images</h2>
+        </div>
+        {% endif %}
+    </div>
+    <div class="text-center">
+        {% for comment in comments %}
+            {{comment.user.username}} : {{comment.comment}}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
