@@ -4,7 +4,7 @@
 <div class="container" id = "bod">
     <div class="row">
         {% if pic %}
-        <div class="card col-xs-9 col-sm-9 col-md-9 col-lg-9">
+        <div class="card">
             {{pic.user.username}}
             <img src="{{pic.image.url}}" alt="Image" class="card-img-top">
                   {{pic.post_date|timesince}} ago
