@@ -21,7 +21,7 @@
     </div>
     <div class="">
         {% for comment in comments %}
-            <p>{{comment.user.username}} : {{comment.comment}}</p>
+            <p><strong>{{comment.user.username}}</strong> : {{comment.comment}}</p>
         {% endfor %}
     </div>
 </div>
