@@ -5,9 +5,9 @@
   <div class="row d-flex justify-content-center">
     {% for pic in pics%}
     <!--Displaying the pictures-->
-    <div class="card col-xs-9 col-sm-9 col-md-9 col-lg-9">
+    <div style='margin-top:50px; margin-bottom:50px;' class="card col-xs-9 col-sm-9 col-md-9 col-lg-9 ">
       {{pic.user.username}}
-      <a href="{% url 'picture' pic.id %}"><img class="card-img-top" src="{{pic.image.url}}" alt="Image"></a>
+      <a href="{% url 'picture' pic.id %}"><img class="card-img-top mp-8 mp-8" src="{{pic.image.url}}" alt="Image"></a>
 
     </div>
     {% empty %}
